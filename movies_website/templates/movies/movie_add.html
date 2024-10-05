@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'add_movie.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <h1>Add New Movie</h1>
+    <form class="auth-form" action="{% url 'movie:add' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- Renders the form fields as paragraph elements -->
+        <input type="submit" value="Add Movie" class="btn-add-movie">
+    </form>
+</div>
+{% endblock %}

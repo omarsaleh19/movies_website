@@ -1,0 +1,102 @@
+/* General form styles */
+.auth-container {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;  /* Center the heading */
+}
+
+/* Form styles */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Center the form elements */
+    width: 100%; /* Ensures form takes full width */
+}
+
+.auth-form label {
+    align-self: flex-start;  /* Align labels to the left */
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="password"] {
+    padding: 8px 8px;  /* Adjust padding for better form input size */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Ensure input fields are full width */
+    max-width: 400px;  /* Set a max width for input fields */
+}
+
+.auth-form input[type="text"]:focus,
+.auth-form input[type="password"]:focus {
+    border-color: #ff2b2b;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+    outline: none;
+}
+
+/* Login button */
+.btn-login {
+    background-color: #ff2b2b;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Make the button responsive and take full width */
+    max-width: 200px; /* Limit button width */
+    text-align: center; /* Center the text inside the button */
+}
+
+.btn-login:hover {
+    background-color: #e62020;
+}
+
+.btn-login:active {
+    background-color: #cc1f1f;
+}
+
+.auth-form a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    display: inline-block; /* Ensures space between the input fields and the link */
+    transition: color 0.3s ease;
+}
+
+.auth-form a:hover {
+    color: #e62020;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .auth-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .auth-container h1 {
+        font-size: 2rem;
+    }
+
+    .auth-form input[type="submit"] {
+        font-size: 1rem;
+    }
+}

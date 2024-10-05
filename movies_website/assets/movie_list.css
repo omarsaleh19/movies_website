@@ -1,0 +1,48 @@
+/* Movie List Grid */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.movie-card {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 3px;
+    border-color:rgb(0, 0, 0);
+}
+
+.movie-title {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+}
+
+/* Adjust page background */
+body {
+    background-color: #ffffff;
+    color: #fff;
+}
+
+h2 {
+    font-size: 50px;
+    font-family: "Audiowide", sans-serif;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,106 @@
+/* General form styles */
+.auth-container {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Form styling */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.auth-form label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    text-align: left;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="password"],
+.auth-form input[type="date"],
+.auth-form textarea {
+    padding: 8px 8px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Textarea for description */
+.auth-form textarea {
+    height: 100px;
+}
+
+/* Styling for focused input fields */
+.auth-form input[type="text"]:focus,
+.auth-form input[type="password"]:focus,
+.auth-form input[type="date"]:focus,
+.auth-form textarea:focus {
+    border-color: #ff2b2b;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+    outline: none;
+}
+
+/* Submit button */
+.btn-add-movie {
+    background-color: #ff2b2b;
+    color: white;
+    padding: 8px 8px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Help text for form fields */
+.auth-form .helptext {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.btn-add-movie:hover {
+    background-color: #ff2b2b;
+}
+
+.btn-add-movie:active {
+    background-color: #ff2b2b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .auth-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .auth-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .auth-form input[type="submit"] {
+        font-size: 1rem;
+    }
+}

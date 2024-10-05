@@ -1,0 +1,53 @@
+{% extends 'base_layout.html' %}
+
+{% block title %}
+    {{ movie.title }}
+{% endblock %}
+
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'movie_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="movie-detail">
+    <div class="movie-poster">
+        <img src="{{ movie.poster.url }}" alt="{{ movie.title }}">
+    </div>
+    <div class="movie-info">
+        <h2>{{ movie.title }}</h2>
+        <p class="description">{{ movie.description }}</p>
+        <p><strong>Directed by:</strong> {{ movie.director }}</p>
+        <p><strong>Cast:</strong> {{ movie.actors }}</p>
+        <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+    </div>
+</div>
+
+<div class="review-section">
+    <h3>Reviews</h3>
+    {% if reviews %}
+        <ul class="review-list">
+            {% for review in reviews %}
+            <li>
+                <p>{{ review.text }}</p>
+                <p><strong>{{ review.user.username }}</strong> - {{ review.date_posted }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reviews yet. Be the first to review!</p>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+        <h3>Leave a Review</h3>
+        <form method="POST" class="review-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit Review</button>
+        </form>
+    {% else %}
+        <p>You must be logged in to leave a review.</p>
+        <a href="{% url 'accounts:login' %}?next={{ request.path }}">Login</a>
+    {% endif %}
+</div>
+{% endblock %}
